@@ -3077,3 +3077,4 @@ Displaying clfruitninja.html.
 """
 	return html
 
+app = app
