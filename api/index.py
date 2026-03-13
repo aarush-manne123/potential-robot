@@ -43,7 +43,8 @@ html1 = """
     <body>
     
 <form method="POST">
-    <input type="password" name="user_text" placeholder="Password"><br>
+    <input type="user_text" name="username" placeholder="Username"><br>
+	<input type="password" name="user_text" placeholder="Password"><br>
     <button type="submit">Submit</button>
 </form>
     
@@ -77,38 +78,42 @@ def cover():
 def games():
     if request.method == "POST":
         user_input = request.form["user_text"]
-        if user_input=="SCHOOLRULES":
-            html = f"""
-            <html>
-			<head>
-				<h1 style="color:lightblue">Welcome to</h1>
-				<t style="color:lightblue">LUNAR</t>
-			</head>
-            <body style="background-image: url('https://img.freepik.com/free-photo/illustration-cosmic-background-with-orange-neon-laser-lights_181624-19567.jpg?semt=ais_rp_50_assets&w=740&q=80'); background-size: cover;">
-                <p style="color: teal;">HOW TO USE:</p>
-                <p style="color: teal;">To use this page click on the following:</p>
-                <ul>
-                    <li><a href="https://www.smalltowndude.com/BasketballStars"><img src="https://imgs.crazygames.com/games/basketball-stars-2019/cover-1583231506155.png?metadata=none&quality=100&width=1200&height=630&fit=crop"></a></li>
-                    <li><a href="https://www.smalltowndude.com/DriveMad"><img src="https://drivemadgame.cc/uploads/games/main/img_68c3e328e0294.jpg"></a></li>
-                    <li><a href="https://www.smalltowndude.com/RetroBowl"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2mnn.jpg"></a></li>
-                    <li><a href="https://www.smalltowndude.com/F.N.F_indie_cross"><img src="https://i.ytimg.com/vi/aicBBQJ0gHI/maxresdefault.jpg"></a></li>
-                    <li><a href="https://www.smalltowndude.com/Time_Shooter"><img src="https://imgs.crazygames.com/time-shooter-3-swat_16x9/20241113103402/time-shooter-3-swat_16x9-cover?metadata=none&quality=100&width=1200&height=630&fit=crop"></a></li>
-                    <li><a href="https://www.smalltowndude.com/Chicken_Wars"><img src="https://imgs.crazygames.com/chicken-cs_16x9/20241014081245/chicken-cs_16x9-cover?metadata=none&quality=100&width=1200&height=630&fit=crop"></a></li>
-                    <li><a href="https://www.smalltowndude.com/Monkey_Mart"><img src="https://play-lh.googleusercontent.com/rWReIdyvDaYJPeOxn7hbC0b-96ixGpQKM_EndiQa3SUME8TtI_rNUcI4qsw5teK9mqk"></a></li>
-                    <li><a href="https://www.smalltowndude.com/Stickman_Hook"><img src="https://stickhook.io/data/image/game/stick-hook-game1.png"></a></li>
-                    <li><a href="https://www.smalltowndude.com/Minecraft"><img src="https://eaglercraft.com/img/Official_Minecraft_Trailer.webp"></a></li>
-                    <li><a href="https://www.smalltowndude.com/War-of-Knight"><img src="https://citybrawl.com/data/image/war-the-knights-battle-arena-swords-3d.jpg"></a></li>
-                    <li><a href="https://www.smalltowndude.com/CSGO"><img src="https://internet.medialities.org/wp-content/uploads/2024/02/07a83-csgo-operation-10-details-1.jpg?w=1024&h=576"></a></li>
-                    <li><a href="https://www.smalltowndude.com/Robbery"><img src="https://tcf.admeen.org/game/18500/18435/400x246/bank-robbery.jpg"></a></li>
-					<li><a href="https://www.smalltowndude.com/Friday_Night_Funking2"><img src="https://images.gamebanana.com/img/ss/mods/609480204201c.jpg"></a></li>
-					<li><a href="https://www.smalltowndude.com/NMTR"><img src="https://juicybeast.com/press/knightmare_tower/images/kt_screenshot_00.png"></a></li>
-					<li><a href="https://www.smalltowndude.com/FN"><img src="https://www.coolmathgames.com/sites/default/files/FruitNinja_OG-Logo.jpg"></a></li>
-                </ul>
-            </body>
-            </html>"""
-            return html
-        else:
-            pass
+		user_input = request.form["username"]
+		if username=="HACKERFAN":
+	        if user_input=="SCHOOLRULES":
+	            html = f"""
+	            <html>
+				<head>
+					<h1 style="color:lightblue">Welcome to</h1>
+					<t style="color:lightblue">LUNAR</t>
+				</head>
+	            <body style="background-image: url('https://img.freepik.com/free-photo/illustration-cosmic-background-with-orange-neon-laser-lights_181624-19567.jpg?semt=ais_rp_50_assets&w=740&q=80'); background-size: cover;">
+	                <p style="color: teal;">HOW TO USE:</p>
+	                <p style="color: teal;">To use this page click on the following:</p>
+	                <ul>
+	                    <li><a href="https://www.smalltowndude.com/BasketballStars"><img src="https://imgs.crazygames.com/games/basketball-stars-2019/cover-1583231506155.png?metadata=none&quality=100&width=1200&height=630&fit=crop"></a></li>
+	                    <li><a href="https://www.smalltowndude.com/DriveMad"><img src="https://drivemadgame.cc/uploads/games/main/img_68c3e328e0294.jpg"></a></li>
+	                    <li><a href="https://www.smalltowndude.com/RetroBowl"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2mnn.jpg"></a></li>
+	                    <li><a href="https://www.smalltowndude.com/F.N.F_indie_cross"><img src="https://i.ytimg.com/vi/aicBBQJ0gHI/maxresdefault.jpg"></a></li>
+	                    <li><a href="https://www.smalltowndude.com/Time_Shooter"><img src="https://imgs.crazygames.com/time-shooter-3-swat_16x9/20241113103402/time-shooter-3-swat_16x9-cover?metadata=none&quality=100&width=1200&height=630&fit=crop"></a></li>
+	                    <li><a href="https://www.smalltowndude.com/Chicken_Wars"><img src="https://imgs.crazygames.com/chicken-cs_16x9/20241014081245/chicken-cs_16x9-cover?metadata=none&quality=100&width=1200&height=630&fit=crop"></a></li>
+	                    <li><a href="https://www.smalltowndude.com/Monkey_Mart"><img src="https://play-lh.googleusercontent.com/rWReIdyvDaYJPeOxn7hbC0b-96ixGpQKM_EndiQa3SUME8TtI_rNUcI4qsw5teK9mqk"></a></li>
+	                    <li><a href="https://www.smalltowndude.com/Stickman_Hook"><img src="https://stickhook.io/data/image/game/stick-hook-game1.png"></a></li>
+	                    <li><a href="https://www.smalltowndude.com/Minecraft"><img src="https://eaglercraft.com/img/Official_Minecraft_Trailer.webp"></a></li>
+	                    <li><a href="https://www.smalltowndude.com/War-of-Knight"><img src="https://citybrawl.com/data/image/war-the-knights-battle-arena-swords-3d.jpg"></a></li>
+	                    <li><a href="https://www.smalltowndude.com/CSGO"><img src="https://internet.medialities.org/wp-content/uploads/2024/02/07a83-csgo-operation-10-details-1.jpg?w=1024&h=576"></a></li>
+	                    <li><a href="https://www.smalltowndude.com/Robbery"><img src="https://tcf.admeen.org/game/18500/18435/400x246/bank-robbery.jpg"></a></li>
+						<li><a href="https://www.smalltowndude.com/Friday_Night_Funking2"><img src="https://images.gamebanana.com/img/ss/mods/609480204201c.jpg"></a></li>
+						<li><a href="https://www.smalltowndude.com/NMTR"><img src="https://juicybeast.com/press/knightmare_tower/images/kt_screenshot_00.png"></a></li>
+						<li><a href="https://www.smalltowndude.com/FN"><img src="https://www.coolmathgames.com/sites/default/files/FruitNinja_OG-Logo.jpg"></a></li>
+	                </ul>
+	            </body>
+	            </html>"""
+	            return html
+	        else:
+	            pass
+		else:
+			pass
     return html1
 
 @app.route("/Proxy", methods=["GET", "POST"])
@@ -120,6 +125,7 @@ def Proxy():
 <body style="background:black;color:white;text-align:center">
 
 <form method="POST">
+<input type="user_text" name="username" placeholder="Username"><br>
 <input type="password" name="user_text" placeholder="Password"><br><br>
 <input type="text" name="url" placeholder="example.com"><br><br>
 <button type="submit">Submit</button>
@@ -132,15 +138,19 @@ def Proxy():
     if request.method == "POST":
         password = request.form.get("user_text")
         url = request.form.get("url")
-        if password == "H#C3ER" and url:
-            try:
-                if not url.startswith("http"):
-                    url = "https://" + url
-                r = requests.get(url, verify=False, timeout=10)
-                return r.text
-            except Exception as e:
-                return f"Proxy error: {e}"
-
+		username = request.form.get("username")
+		if username=="UNBLOCKSRULE":
+			pass
+	        if password == "H#C3ER" and url:
+	            try:
+	                if not url.startswith("http"):
+	                    url = "https://" + url
+	                r = requests.get(url, verify=False, timeout=10)
+	                return r.text
+	            except Exception as e:
+	                return f"Proxy error: {e}"
+		else:
+			pass
     return html2
 
 @app.route("/Info")
