@@ -75,7 +75,7 @@ def cover():
 def games():
     if request.method == "POST":
         user_input = request.form["user_text"]
-		user_input = request.form["username"]
+		username = request.form["username"]
 		if username=="HACKERFAN":
 	        if user_input=="SCHOOLRULES":
 	            html = f"""
