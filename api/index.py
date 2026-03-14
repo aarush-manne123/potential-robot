@@ -39,11 +39,11 @@ html1 = """
     
     <body>
     
-<form method="POST">
-    <input type="user_text" name="username" placeholder="Username"><br>
-	<input type="password" name="user_text" placeholder="Password"><br>
-    <button type="submit">Submit</button>
-</form>
+		<form method="POST">
+		    <input type="text" name="username" placeholder="Username"><br>
+		    <input type="password" name="user_text" placeholder="Password"><br>
+		    <button type="submit">Submit</button>
+		</form>
     
     </body>
     </html>
@@ -71,13 +71,14 @@ def cover():
     </html>
     """
     return html
-@app.route("/Games",methods=["GET", "POST"])
+@app.route("/Games", methods=["GET", "POST"])
 def games():
+
     if request.method == "POST":
-        user_input = request.form["user_text"]
-		username = request.form["username"]
-		if username=="HACKERFAN":
-	        if user_input=="SCHOOLRULES":
+        username = request.form.get("username")
+        password = request.form.get("user_text")
+
+        if username == "HACKERFAN" and password == "SCHOOLRULES":
 	            html = f"""
 	            <html>
 				<head>
@@ -113,16 +114,13 @@ def games():
 			pass
     return html1
 
-@app.route("/Proxy", methods=["GET", "POST"])
-def Proxy():
-
-    html2 = """
+html2 = """
 <!DOCTYPE html>
 <html>
 <body style="background:black;color:white;text-align:center">
 
 <form method="POST">
-<input type="user_text" name="username" placeholder="Username"><br>
+<input type="text" name="username" placeholder="Username"><br>
 <input type="password" name="user_text" placeholder="Password"><br><br>
 <input type="text" name="url" placeholder="example.com"><br><br>
 <button type="submit">Submit</button>
@@ -132,23 +130,28 @@ def Proxy():
 </html>
 """
 
+
+@app.route("/Proxy", methods=["GET", "POST"])
+def proxy():
+
     if request.method == "POST":
-		password = request.form.get("user_text")
-		url = request.form.get("url")
-		username = request.form.get("username")
-		if username=="UNBLOCKSRULE":
-			pass
-	        if password == "H#C3ER" and url:
-	            try:
-	                if not url.startswith("http"):
-	                    url = "https://" + url
-	                r = requests.get(url, verify=False, timeout=10)
-	                return r.text
-	            except Exception as e:
-	                return f"Proxy error: {e}"
-		else:
-			pass
+        username = request.form.get("username")
+        password = request.form.get("user_text")
+        url = request.form.get("url")
+
+        if username == "UNBLOCKSRULE" and password == "H#C3ER" and url:
+            try:
+                if not url.startswith("http"):
+                    url = "https://" + url
+
+                resp = requests.get(url, timeout=10)
+                return resp.text
+
+            except Exception as e:
+                return f"Proxy error: {e}"
+
     return html2
+
 
 @app.route("/Info")
 def info():
