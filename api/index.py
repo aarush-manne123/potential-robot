@@ -1,7 +1,5 @@
-import time
 import requests
 from flask import *
-import random as r
 app=Flask(__name__)
 
 html1 = """
@@ -89,21 +87,21 @@ def games():
 	                <p style="color: teal;">HOW TO USE:</p>
 	                <p style="color: teal;">To use this page click on the following:</p>
 	                <ul>
-	                    <li><a href="https://www.smalltowndude.com/BasketballStars"><img src="https://imgs.crazygames.com/games/basketball-stars-2019/cover-1583231506155.png?metadata=none&quality=100&width=1200&height=630&fit=crop"></a></li>
-	                    <li><a href="https://www.smalltowndude.com/DriveMad"><img src="https://drivemadgame.cc/uploads/games/main/img_68c3e328e0294.jpg"></a></li>
-	                    <li><a href="https://www.smalltowndude.com/RetroBowl"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2mnn.jpg"></a></li>
-	                    <li><a href="https://www.smalltowndude.com/F.N.F_indie_cross"><img src="https://i.ytimg.com/vi/aicBBQJ0gHI/maxresdefault.jpg"></a></li>
-	                    <li><a href="https://www.smalltowndude.com/Time_Shooter"><img src="https://imgs.crazygames.com/time-shooter-3-swat_16x9/20241113103402/time-shooter-3-swat_16x9-cover?metadata=none&quality=100&width=1200&height=630&fit=crop"></a></li>
-	                    <li><a href="https://www.smalltowndude.com/Chicken_Wars"><img src="https://imgs.crazygames.com/chicken-cs_16x9/20241014081245/chicken-cs_16x9-cover?metadata=none&quality=100&width=1200&height=630&fit=crop"></a></li>
-	                    <li><a href="https://www.smalltowndude.com/Monkey_Mart"><img src="https://play-lh.googleusercontent.com/rWReIdyvDaYJPeOxn7hbC0b-96ixGpQKM_EndiQa3SUME8TtI_rNUcI4qsw5teK9mqk"></a></li>
-	                    <li><a href="https://www.smalltowndude.com/Stickman_Hook"><img src="https://stickhook.io/data/image/game/stick-hook-game1.png"></a></li>
-	                    <li><a href="https://www.smalltowndude.com/Minecraft"><img src="https://eaglercraft.com/img/Official_Minecraft_Trailer.webp"></a></li>
-	                    <li><a href="https://www.smalltowndude.com/War-of-Knight"><img src="https://citybrawl.com/data/image/war-the-knights-battle-arena-swords-3d.jpg"></a></li>
-	                    <li><a href="https://www.smalltowndude.com/CSGO"><img src="https://internet.medialities.org/wp-content/uploads/2024/02/07a83-csgo-operation-10-details-1.jpg?w=1024&h=576"></a></li>
-	                    <li><a href="https://www.smalltowndude.com/Robbery"><img src="https://tcf.admeen.org/game/18500/18435/400x246/bank-robbery.jpg"></a></li>
-						<li><a href="https://www.smalltowndude.com/Friday_Night_Funking2"><img src="https://images.gamebanana.com/img/ss/mods/609480204201c.jpg"></a></li>
-						<li><a href="https://www.smalltowndude.com/NMTR"><img src="https://juicybeast.com/press/knightmare_tower/images/kt_screenshot_00.png"></a></li>
-						<li><a href="https://www.smalltowndude.com/FN"><img src="https://www.coolmathgames.com/sites/default/files/FruitNinja_OG-Logo.jpg"></a></li>
+	                    <li><a href="/BasketballStars"><img src="https://imgs.crazygames.com/games/basketball-stars-2019/cover-1583231506155.png?metadata=none&quality=100&width=1200&height=630&fit=crop"></a></li>
+	                    <li><a href="/DriveMad"><img src="https://drivemadgame.cc/uploads/games/main/img_68c3e328e0294.jpg"></a></li>
+	                    <li><a href="/RetroBowl"><img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2mnn.jpg"></a></li>
+	                    <li><a href="/F.N.F_indie_cross"><img src="https://i.ytimg.com/vi/aicBBQJ0gHI/maxresdefault.jpg"></a></li>
+	                    <li><a href="/Time_Shooter"><img src="https://imgs.crazygames.com/time-shooter-3-swat_16x9/20241113103402/time-shooter-3-swat_16x9-cover?metadata=none&quality=100&width=1200&height=630&fit=crop"></a></li>
+	                    <li><a href="/Chicken_Wars"><img src="https://imgs.crazygames.com/chicken-cs_16x9/20241014081245/chicken-cs_16x9-cover?metadata=none&quality=100&width=1200&height=630&fit=crop"></a></li>
+	                    <li><a href="/Monkey_Mart"><img src="https://play-lh.googleusercontent.com/rWReIdyvDaYJPeOxn7hbC0b-96ixGpQKM_EndiQa3SUME8TtI_rNUcI4qsw5teK9mqk"></a></li>
+	                    <li><a href="/Stickman_Hook"><img src="https://stickhook.io/data/image/game/stick-hook-game1.png"></a></li>
+	                    <li><a href="/Minecraft"><img src="https://eaglercraft.com/img/Official_Minecraft_Trailer.webp"></a></li>
+	                    <li><a href="/War-of-Knight"><img src="https://citybrawl.com/data/image/war-the-knights-battle-arena-swords-3d.jpg"></a></li>
+	                    <li><a href="/CSGO"><img src="https://internet.medialities.org/wp-content/uploads/2024/02/07a83-csgo-operation-10-details-1.jpg?w=1024&h=576"></a></li>
+	                    <li><a href="/Robbery"><img src="https://tcf.admeen.org/game/18500/18435/400x246/bank-robbery.jpg"></a></li>
+						<li><a href="/Friday_Night_Funking2"><img src="https://images.gamebanana.com/img/ss/mods/609480204201c.jpg"></a></li>
+						<li><a href="/NMTR"><img src="https://juicybeast.com/press/knightmare_tower/images/kt_screenshot_00.png"></a></li>
+						<li><a href="/FN"><img src="https://www.coolmathgames.com/sites/default/files/FruitNinja_OG-Logo.jpg"></a></li>
 	                </ul>
 	            </body>
 	            </html>"""
