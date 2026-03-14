@@ -1,11 +1,8 @@
-import webbrowser
 import time
 import requests
 from flask import *
 import random as r
-port_num = r.randint(1001,10000)
 app=Flask(__name__)
-print(f"PORT_NUM=={port_num}")
 
 html1 = """
     <!DOCTYPE html>
@@ -136,8 +133,8 @@ def Proxy():
 """
 
     if request.method == "POST":
-        password = request.form.get("user_text")
-        url = request.form.get("url")
+		password = request.form.get("user_text")
+		url = request.form.get("url")
 		username = request.form.get("username")
 		if username=="UNBLOCKSRULE":
 			pass
@@ -3087,4 +3084,4 @@ Displaying clfruitninja.html.
 """
 	return html
 
-app = app
+handler = app
