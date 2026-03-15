@@ -112,13 +112,16 @@ def games():
 			pass
     return html1
 
-html2 = """
+
+@app.route("/Proxy", methods=["GET", "POST"])
+def Proxy():
+
+    html2 = """
 <!DOCTYPE html>
 <html>
 <body style="background:black;color:white;text-align:center">
 
 <form method="POST">
-<input type="text" name="username" placeholder="Username"><br>
 <input type="password" name="user_text" placeholder="Password"><br><br>
 <input type="text" name="url" placeholder="example.com"><br><br>
 <button type="submit">Submit</button>
@@ -128,28 +131,42 @@ html2 = """
 </html>
 """
 
-
-@app.route("/Proxy", methods=["GET", "POST"])
-def proxy():
-
     if request.method == "POST":
-        username = request.form.get("username")
         password = request.form.get("user_text")
         url = request.form.get("url")
 
-        if username == "UNBLOCKSRULE" and password == "H#C3ER" and url:
-            try:
-                if not url.startswith("http"):
-                    url = "https://" + url
+        if password == "HaCkER" and url:
 
-                resp = requests.get(url, timeout=10)
-                return resp.text
+            if not url.startswith("http"):
+                url = "https://" + url
+
+            try:
+                r = requests.get(
+                    url,
+                    headers={"User-Agent": "Mozilla/5.0"},
+                    timeout=10,
+                    verify=False
+                )
+
+                excluded_headers = [
+                    "content-encoding",
+                    "content-length",
+                    "transfer-encoding",
+                    "connection",
+                ]
+
+                headers = [
+                    (name, value)
+                    for name, value in r.raw.headers.items()
+                    if name.lower() not in excluded_headers
+                ]
+
+                return Response(r.content, r.status_code, headers)
 
             except Exception as e:
                 return f"Proxy error: {e}"
 
     return html2
-
 
 @app.route("/Info")
 def info():
